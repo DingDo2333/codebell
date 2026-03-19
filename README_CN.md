@@ -1,5 +1,7 @@
 # Claude Code 提示音
 
+中文 | [English](./README.md)
+
 为 Claude Code 添加音效通知。在 Claude 需要你批准权限或执行完毕时播放提示音。
 
 ## 环境要求
