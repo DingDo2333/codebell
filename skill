@@ -1,0 +1,91 @@
+This skill handles two tasks: installing sound notifications for Claude Code, and switching the notification sound.
+
+---
+
+## Task 1: Install
+
+If the user asks to install, follow these steps:
+
+1. Create `~/.claude/sounds/` if it doesn't exist.
+
+2. Download all files from the `sounds/` directory of this repository into `~/.claude/sounds/`:
+   - `cough.mp3`
+   - `chime.wav`
+   - `pop.mp3`
+
+   Use the raw GitHub URL of this repository. For example:
+   `https://raw.githubusercontent.com/DingDo2333/codebell/main/sounds/cough.mp3`
+
+3. Download `play.sh` into `~/.claude/sounds/play.sh` and make it executable:
+   ```
+   chmod +x ~/.claude/sounds/play.sh
+   ```
+
+4. Create `~/.claude/sounds/config` with the default sound:
+   ```
+   sound=cough
+   ```
+
+5. Add the following hooks to `~/.claude/settings.json` (merge carefully if the file already exists):
+   ```json
+   {
+     "hooks": {
+       "Stop": [
+         {
+           "hooks": [
+             {
+               "type": "command",
+               "command": "bash ~/.claude/sounds/play.sh"
+             }
+           ]
+         }
+       ],
+       "PermissionRequest": [
+         {
+           "hooks": [
+             {
+               "type": "command",
+               "command": "bash ~/.claude/sounds/play.sh"
+             }
+           ]
+         }
+       ]
+     }
+   }
+   ```
+
+6. Show the user the available sounds (see Task 2 step 1) and ask if they'd like to switch from the default.
+
+7. Tell the user installation is complete and to restart Claude Code.
+
+---
+
+## Task 2: Switch sound
+
+If the user asks to switch or change the notification sound, follow these steps:
+
+1. Show the available sounds as a numbered list. Read `~/.claude/sounds/config` to mark the current selection:
+
+   ```
+   Available sounds:
+
+     1. cough    (current)
+     2. chime
+     3. pop
+
+   Enter a number to select:
+   ```
+
+2. Wait for the user to enter a number.
+
+3. Update `~/.claude/sounds/config` with the chosen sound name:
+   ```
+   sound=<chosen_name>
+   ```
+
+4. Play the selected sound immediately so the user can preview it:
+   ```
+   bash ~/.claude/sounds/play.sh
+   ```
+
+5. Confirm the switch to the user.
