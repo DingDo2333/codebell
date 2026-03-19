@@ -1,5 +1,7 @@
 # Claude Code Sound Notification
 
+[中文文档](./README_CN.md)
+
 A sound notification plugin for Claude Code. Plays an audio cue when Claude needs your permission to use a tool, or when Claude finishes responding.
 
 ## Requirements
