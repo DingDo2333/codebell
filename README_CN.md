@@ -26,7 +26,19 @@ Claude Code 会自动下载音效文件、配置播放脚本并写入 hook。
 
 ## 开关提示音
 
-告诉 Claude Code 关闭（或开启）提示音，它会显示当前状态并询问确认。
+告诉 Claude Code 关闭（或开启）提示音：
+
+> "关闭提示音"
+
+它会显示当前状态并询问确认：
+
+```
+提示音当前状态：开启 (ON)
+
+确认关闭吗？(y/n)
+```
+
+也可以手动编辑 `~/.claude/sounds/config`，将 `enabled=false` 设为关闭，`enabled=true` 设为开启。
 
 ## 切换音效
 

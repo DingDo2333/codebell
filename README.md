@@ -26,7 +26,19 @@ Claude Code will automatically download the sound files, set up the play script,
 
 ## Toggle on/off
 
-Tell Claude Code to turn off (or turn on) the notification sound. It will show the current status and ask for confirmation.
+Tell Claude Code to turn off (or turn on) the notification sound:
+
+> "Turn off the notification sound"
+
+It will show the current status and ask for confirmation:
+
+```
+Sound notifications are currently: ON
+
+Turn OFF? (y/n)
+```
+
+You can also manually edit `~/.claude/sounds/config` and set `enabled=false` to disable or `enabled=true` to enable.
 
 ## Switch sound
 
