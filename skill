@@ -21,8 +21,9 @@ If the user asks to install, follow these steps:
    chmod +x ~/.claude/sounds/play.sh
    ```
 
-4. Create `~/.claude/sounds/config` with the default sound:
+4. Create `~/.claude/sounds/config` with the default settings:
    ```
+   enabled=true
    sound=cough
    ```
 
@@ -89,3 +90,28 @@ If the user asks to switch or change the notification sound, follow these steps:
    ```
 
 5. Confirm the switch to the user.
+
+---
+
+## Task 3: Toggle on/off
+
+If the user asks to enable, disable, turn on, turn off, mute, or unmute the notification sound, follow these steps:
+
+1. Read `~/.claude/sounds/config` and check the `enabled` value (default `true`).
+
+2. Show the current status and ask for confirmation:
+
+   ```
+   Sound notifications are currently: ON
+
+   Turn OFF? (y/n)
+   ```
+
+3. Wait for the user to confirm.
+
+4. Update the `enabled` line in `~/.claude/sounds/config`:
+   ```
+   enabled=true    ← or false
+   ```
+
+5. Confirm the new status to the user.

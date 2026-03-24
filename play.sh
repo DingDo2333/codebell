@@ -5,10 +5,17 @@
 SOUNDS_DIR="$(dirname "$0")"
 CONFIG_FILE="$SOUNDS_DIR/config"
 
-# Read selected sound from config, default to cough
+# Read config
 if [[ -f "$CONFIG_FILE" ]]; then
+  ENABLED=$(grep '^enabled=' "$CONFIG_FILE" | cut -d'=' -f2)
   SOUND_NAME=$(grep '^sound=' "$CONFIG_FILE" | cut -d'=' -f2)
   VOLUME=$(grep "^volume_${SOUND_NAME}=" "$CONFIG_FILE" | cut -d'=' -f2)
+fi
+
+# Check if enabled, default to true
+ENABLED="${ENABLED:-true}"
+if [[ "$ENABLED" != "true" ]]; then
+  exit 0
 fi
 SOUND_NAME="${SOUND_NAME:-cough}"
 VOLUME="${VOLUME:-0.3}"

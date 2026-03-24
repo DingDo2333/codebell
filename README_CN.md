@@ -24,6 +24,10 @@ Claude Code 会自动下载音效文件、配置播放脚本并写入 hook。
 | Claude 需要你批准工具权限时 | 播放提示音 |
 | Claude 执行完毕时 | 播放提示音 |
 
+## 开关提示音
+
+告诉 Claude Code 关闭（或开启）提示音，它会显示当前状态并询问确认。
+
 ## 切换音效
 
 告诉 Claude Code 切换提示音，它会列出可用选项：
@@ -48,7 +52,7 @@ Claude Code 会自动下载音效文件、配置播放脚本并写入 hook。
    curl -L https://raw.githubusercontent.com/DingDo2333/codebell/main/sounds/pop.mp3 -o ~/.claude/sounds/pop.mp3
    curl -L https://raw.githubusercontent.com/DingDo2333/codebell/main/play.sh -o ~/.claude/sounds/play.sh
    chmod +x ~/.claude/sounds/play.sh
-   echo "sound=cough" > ~/.claude/sounds/config
+   printf "enabled=true\nsound=cough\n" > ~/.claude/sounds/config
    ```
 
 2. 在 `~/.claude/settings.json` 中添加 hook（若文件已存在请注意合并）：

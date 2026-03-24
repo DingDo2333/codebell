@@ -24,6 +24,10 @@ Claude Code will automatically download the sound files, set up the play script,
 | Claude needs permission to use a tool | Plays sound |
 | Claude finishes responding | Plays sound |
 
+## Toggle on/off
+
+Tell Claude Code to turn off (or turn on) the notification sound. It will show the current status and ask for confirmation.
+
 ## Switch sound
 
 Tell Claude Code to switch the notification sound and it will show you the available options:
@@ -48,7 +52,7 @@ Enter a number to select:
    curl -L https://raw.githubusercontent.com/DingDo2333/codebell/main/sounds/pop.mp3 -o ~/.claude/sounds/pop.mp3
    curl -L https://raw.githubusercontent.com/DingDo2333/codebell/main/play.sh -o ~/.claude/sounds/play.sh
    chmod +x ~/.claude/sounds/play.sh
-   echo "sound=cough" > ~/.claude/sounds/config
+   printf "enabled=true\nsound=cough\n" > ~/.claude/sounds/config
    ```
 
 2. Add hooks to `~/.claude/settings.json`:

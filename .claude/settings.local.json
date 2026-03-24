@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh api:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(mkdir -p /Users/longyuhang/AI_Projects/02_Playground/3.19claudecode提示音/sounds)",
+      "Bash(mv /Users/longyuhang/AI_Projects/02_Playground/3.19claudecode提示音/Cough.mp3 /Users/longyuhang/AI_Projects/02_Playground/3.19claudecode提示音/sounds/Cough.mp3)",
+      "Bash(mkdir -p ~/.claude/sounds)",
+      "Bash(cp /Users/longyuhang/AI_Projects/02_Playground/3.19claudecode提示音/sounds/Cough.mp3 ~/.claude/sounds/)",
+      "Bash(cp /Users/longyuhang/AI_Projects/02_Playground/3.19claudecode提示音/play.sh ~/.claude/sounds/)",
+      "Bash(chmod +x ~/.claude/sounds/play.sh)",
+      "Bash(bash ~/.claude/sounds/play.sh ~/.claude/sounds/Cough.mp3)",
+      "Bash(mv Cough.mp3 cough.mp3)",
+      "Bash(mv dragon-studio-pop-402323.mp3 pop.mp3)",
+      "Bash(mv mixkit-page-forward-single-chime-1107.wav chime.wav)",
+      "Bash(cp /Users/longyuhang/AI_Projects/02_Playground/3.19claudecode提示音/sounds/* ~/.claude/sounds/)",
+      "Bash(~/.claude/sounds/config)",
+      "Bash(cp /Users/longyuhang/AI_Projects/02_Playground/3.19claudecode提示音/play.sh ~/.claude/sounds/play.sh)",
+      "Bash(bash ~/.claude/sounds/play.sh)",
+      "Bash(git branch:*)",
+      "Bash(git commit:*)",
+      "Bash(gh repo:*)",
+      "Bash(git add:*)",
+      "Bash(git push:*)"
+    ]
+  }
+}
